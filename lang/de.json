@@ -1,0 +1,10 @@
+{
+    "nav": {
+        "home": "Startseite",
+        "product": "Produkt",
+        "custom": "Individuell",
+        "service": "Dienstleistungen",
+        "events": "Veranstaltungen",
+        "about": "Über uns"
+    }
+}

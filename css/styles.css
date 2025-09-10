@@ -1,0 +1,30 @@
+/* src/css/styles.css */
+@import url('./reset.css');
+@import url('./base.css');
+@import url('./container.css');
+@import url('./animations.css');
+@import url('./header.css');
+/* @import url('./footer.css'); */
+
+
+/* === Form status messages === */
+.contact__status {
+    display: none;
+    margin-top: 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    line-height: 1.4;
+    outline: none;
+}
+
+.contact__status--ok {
+    background: #e8f7ec;
+    border: 1px solid #9fd4aa;
+    color: #145a1f;
+}
+
+.contact__status--err {
+    background: #fdeaea;
+    border: 1px solid #f2a7a7;
+    color: #751b1b;
+}

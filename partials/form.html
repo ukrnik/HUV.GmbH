@@ -1,0 +1,71 @@
+<section id="contact" class="contact" aria-labelledby="contact-title">
+    <div class="container contact__inner">
+        <h2 id="contact-title">Kontaktieren Sie uns</h2>
+
+        <div class="contact__grid">
+        <!-- ФОРМА -->
+        <form class="contact__form" id="contactForm"
+                action="contact.php" method="POST" accept-charset="UTF-8" autocomplete="on" novalidate>
+            <fieldset class="contact__group">
+            <legend class="visually-hidden">Persönliche Daten</legend>
+
+            <div class="contact__row">
+                <div class="field">
+                <label class="field__label" for="first_name">Vorname *</label>
+                <input class="field__input" id="first_name" name="first_name"
+                        type="text" required autocomplete="given-name" />
+                </div>
+
+                <div class="field">
+                <label class="field__label" for="last_name">Nachname *</label>
+                <input class="field__input" id="last_name" name="last_name"
+                        type="text" required autocomplete="family-name" />
+                </div>
+            </div>
+            </fieldset>
+
+            <div class="field">
+            <label class="field__label" for="email">E-Mail *</label>
+            <input class="field__input" id="email" name="email"
+                    type="email" required autocomplete="email" />
+            </div>
+
+            <div class="field">
+            <label class="field__label" for="phone">Telefonnummer</label>
+            <input class="field__input" id="phone" name="phone"
+                    type="tel" autocomplete="tel" inputmode="tel" />
+            </div>
+
+            <div class="field">
+            <label class="field__label" for="message">Nachricht *</label>
+            <textarea class="field__textarea" id="message" name="message"
+                        required rows="5"></textarea>
+            </div>
+
+            <!-- honeypot -->
+            <input type="text" name="_gotcha" tabindex="-1" aria-hidden="true" hidden>
+
+            <button class="btn contact__submit" type="submit">Nachricht senden</button>
+            <p id="formStatus" class="contact__status" aria-live="polite"></p>
+        </form>
+
+        <!-- КАРТА -->
+        <figure class="contact__map">
+            <iframe
+            title="Karte: Jahnplatz 4, 82166 Gräfelfing"
+            src="https://www.google.com/maps?q=Jahnplatz%204,%2082166%20Gr%C3%A4felfing&hl=de&output=embed"
+            loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <figcaption class="visually-hidden">
+            Standortkarte der Firma in Gräfelfing.
+            </figcaption>
+            <p class="contact__map-link">
+            <a href="https://www.google.com/maps?q=Jahnplatz+4,+82166+Gräfelfing"
+                target="_blank" rel="noopener">In Google Maps öffnen</a>
+            </p>
+        </figure>
+        </div>
+    </div>
+    
+</section>

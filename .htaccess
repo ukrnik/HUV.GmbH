@@ -1,0 +1,102 @@
+# =================================================
+# Basic hardening & defaults
+# =================================================
+# запрет листинга директорий
+Options -Indexes
+
+# кодировка по умолчанию
+AddDefaultCharset UTF-8
+
+# своя 404
+ErrorDocument 404 /404.html
+
+# =================================================
+# Redirect HTTP → HTTPS (дружит с реверс-прокси)
+# =================================================
+RewriteEngine On
+# если не https и не прокинут https заголовком — редиректим
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https [OR]
+RewriteCond %{HTTP:X-Forwarded-Ssl} !on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# =================================================
+# Compression
+# =================================================
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE \
+        text/plain text/html text/xml text/css \
+        text/javascript application/javascript application/json application/xml \
+        image/svg+xml
+</IfModule>
+
+# =================================================
+# Expires / caching (для статического лендинга)
+# =================================================
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # по умолчанию
+    ExpiresDefault "access plus 1 hour"
+
+    # HTML — коротко, чтобы правки подтягивались
+    ExpiresByType text/html "access plus 10 minutes"
+
+    # CSS/JS — месяц (без сборщика обновляй версией: ?v=2)
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+
+    # Картинки/иконки/манифест — год
+    ExpiresByType image/gif  "access plus 1 year"
+    ExpiresByType image/png  "access plus 1 year"
+    ExpiresByType image/jpg  "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType application/manifest+json "access plus 1 year"
+</IfModule>
+
+# Явные Cache-Control (безопасно обернуто)
+<IfModule mod_headers.c>
+    <FilesMatch "\.(ico|gif|png|jpe?g|svg|webp|woff2?)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+    <FilesMatch "\.(html?)$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+</IfModule>
+
+# =================================================
+# Security headers (разумные дефолты для лендинга)
+# =================================================
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+    # HSTS — только на HTTPS (на http не ломаемся)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>
+
+# =================================================
+# SVG: корректный MIME и gzip для .svgz
+# =================================================
+AddType image/svg+xml .svg .svgz
+AddEncoding gzip .svgz
+
+# =================================================
+# (Необязательно) Content-Security-Policy
+# Включи, если нет внешних CDN и устраивают инлайны:
+# <IfModule mod_headers.c>
+#   Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https: data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+# </IfModule>
+
+<Files "contacts.csv">
+    Require all denied
+</Files>
