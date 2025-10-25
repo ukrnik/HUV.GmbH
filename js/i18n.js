@@ -1,5 +1,9 @@
-const switcher = document.getElementById("languageSwitcher");
+const selector = document.getElementById("languageSelector");
+const options = document.getElementById("lang-options");
+const selectedFlag = document.getElementById("selected-flag");
+const selectedLangText = document.getElementById("selected-language");
 
+// Загружаем JSON и обновляем текст
 function loadLanguage(lang) {
     fetch(`lang/${lang}.json`)
         .then((res) => {
@@ -17,19 +21,53 @@ function loadLanguage(lang) {
             el.textContent = text;
             }
         });
-    })
-    .catch((err) => {
+        })
+        .catch((err) => {
         console.error("Language loading error:", err);
-    });
+        });
 }
 
-switcher.addEventListener("change", (e) => {
-    const selectedLang = e.target.value;
-    localStorage.setItem("lang", selectedLang);
-    loadLanguage(selectedLang);
+// Обработка выбора языка
+options.addEventListener("click", (e) => {
+    const li = e.target.closest("li");
+    if (!li) return;
+
+    const lang = li.dataset.lang;
+    const flag = li.dataset.flag;
+    const text = li.querySelector("p").innerText;
+
+    selectedFlag.src = flag;
+    selectedLangText.innerText = text;
+
+    localStorage.setItem("lang", lang);
+    loadLanguage(lang);
+
+    options.style.display = "none";
 });
 
-// Загрузка сохранённого языка или английского по умолчанию
-const savedLang = localStorage.getItem("lang") || "en";
-switcher.value = savedLang;
-loadLanguage(savedLang);
+// Открытие/закрытие выпадающего списка
+selector.addEventListener("click", () => {
+    options.style.display = options.style.display === "block" ? "none" : "block";
+});
+
+// Закрытие при клике вне селектора
+document.addEventListener("click", (e) => {
+    if (!document.querySelector(".custom-select-wrapper").contains(e.target)) {
+        options.style.display = "none";
+    }
+});
+
+// Загрузка при старте
+function initLanguage() {
+    const savedLang = localStorage.getItem("lang") || "en";
+    const li = document.querySelector(`li[data-lang="${savedLang}"]`);
+    if (li) {
+        const flag = li.dataset.flag;
+        const text = li.querySelector("p").innerText;
+        selectedFlag.src = flag;
+        selectedLangText.innerText = text;
+    }
+    loadLanguage(savedLang);
+}
+
+document.addEventListener("DOMContentLoaded", initLanguage);

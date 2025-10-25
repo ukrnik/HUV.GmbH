@@ -11,7 +11,7 @@
     "endOfLine": "lf",
     "htmlWhitespaceSensitivity": "ignore",
     "proseWrap": "preserve",
-    "plugins": ["prettier-plugin-tailwindcss"],
+    "plugins": [],
     "overrides": [
         { "files": "*.css", "options": { "singleQuote": false } },
         { "files": "*.md", "options": { "proseWrap": "preserve" } }

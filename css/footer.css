@@ -1,0 +1,56 @@
+.footer {
+    height: 130px;
+    display: flex;
+    align-items: center; /* выравнивает логотип и текст по вертикали */
+
+    background-color: var(--color-red-dark);
+    /* border-radius: 10px; */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.container {
+}
+.footer__logo {
+    margin-left: 40px;
+}
+.footer__img {
+}
+.footer__address {
+    display: flex;
+}
+.footer__address__block {
+    /* font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-offwhite); */
+    margin-left: 90px;
+}
+.footer__address__title {
+    font-family: "Inter", sans-serif;
+    font-weight: 00;
+    font-size: 24px;
+    color: var(--color-offwhite);
+    /* margin-left: 90px; */
+}
+.footer__address__text {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-offwhite);
+    /* margin-left: 90px; */
+}
+.footer__contacts {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-offwhite);
+    margin-left: 300px;
+}
+.footer__contact__list {
+}
+.footer__contact__item {
+}
+.footer__contact__span {
+}
+.footer__contact__link {
+}

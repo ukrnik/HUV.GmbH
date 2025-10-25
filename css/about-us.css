@@ -1,0 +1,43 @@
+.about__banner {
+    height: 700px;
+    margin: 0 auto;
+    padding: 62px 0;
+    background-image: url(../img/Hero\ Photo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.about__container {
+}
+
+.about__title {
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    color: var(--color-offwhite);
+}
+.about__text {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-offwhite);
+    /* height: 315px; */
+    max-width: 600px;
+    margin-top: 38px;
+}
+.about__btn {
+    margin-top: 54px;
+    background-color: var(--color-red-dark);
+    border-radius: 10px;
+    height: 64px;
+    width: 600px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    color: var(--color-offwhite);
+}

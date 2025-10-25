@@ -1,0 +1,32 @@
+.bannefits {
+    background-color: var(--color-red-dark);
+}
+.bannefits__list {
+    display: flex;
+}
+.bannefits__item {
+    height: 260px;
+    width: 480px;
+}
+.bannefits__title {
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: var(--color-offwhite);
+    margin-top: 30px;
+}
+.bannefits__line {
+    background-color: var(--color-white);
+    /* margin: 0 auto; */
+    width: 400px;
+    height: 1px;
+    margin: 25px auto;
+}
+.bannefits__text {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-offwhite);
+}

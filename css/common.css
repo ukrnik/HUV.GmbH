@@ -1,0 +1,80 @@
+/* ===============================
+    🎨 Переменные (цвета, шрифты и т.д.)
+   =============================== */
+:root {
+    /* Основная палитра */
+    --color-white: #ffffff;
+    --color-offwhite: #fffdf1;
+    --color-gray-light: #dfdfdf;
+    --color-gray-dark: #202728;
+    --color-black: #000000;
+
+    /* Акцентные цвета */
+    --color-red-dark: #96262b;
+    --color-red: #dd0000;
+    --color-yellow: #ffce00;
+
+    /* Шрифты */
+    --font-main: "Open Sans", "Montserrat", "Oswald", "Inter", sans-serif;
+    --font-size-base: 24px;
+    --line-height-base: 1.5;
+}
+
+/* ===============================
+    🧩 Базовые стили
+   =============================== */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    min-width: 375px;
+
+    font-family: var(--font-main);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+
+    color: var(--color-black);
+    background-color: var(--color-offwhite);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* ===============================
+    📦 Контейнер
+   =============================== */
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0px 40px;
+}
+
+/* ===============================
+    📦 Базовые стили
+   =============================== */
+.font__main {
+    font-family: Open Sans;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-gray-dark);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}

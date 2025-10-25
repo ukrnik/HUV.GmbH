@@ -1,34 +1,61 @@
-<footer class="site-footer" role="contentinfo" aria-label="Fußbereich">
-    <div class="container site-footer__inner">
-        <!-- Logo -->
-        <figure class="site-footer__logo">
-        <img src="img/HUV_logo.png" alt="HUV GmbH" width="56" height="56" decoding="async" loading="lazy">
-        <figcaption class="visually-hidden">HUV GmbH</figcaption>
-        </figure>
+<footer class="footer container">
+    <!-- * Logo -->
+    <a href="" class="footer__logo">
+        <!-- .footer__logo — ссылка-логотип -->
+        <img
+            src="./img/HUV_logo_black.png"
+            alt="Logo HUV GmbH"
+            width="103"
+            height="103"
+            decoding="async"
+            fetchpriority="high"
+            class="footer__img"
+        />
+    </a>
 
-        <!-- Adresse -->
-        <address class="site-footer__address" aria-label="Adresse">
-        <strong>Adresse:</strong>
-        <p>
-            Jahnplatz 4, 82166 Gräfelfing<br>
-            Deutschland
-        </p>
-        </address>
+    <!-- * Adresse und Kontakte -->
+    <address class="footer__address" aria-label="Adresse und Kontakte">
+        <!-- .footer__address — контейнер с адресом и контактами -->
 
-        <!-- Kontakte -->
-        <dl class="site-footer__contacts" aria-label="Kontaktdaten">
-        <div class="site-footer__row">
-            <dt>Telefon:</dt>
-            <dd><a href="tel:+498912509195">+49 89 12 50 91 95</a></dd>
+        <!-- * Adresse -->
+        <div class="footer__address__block">
+            <!-- .footer__address__block — блок с адресом -->
+            <strong class="footer__address__title">Adresse:</strong>
+            <!-- .footer__address__title — заголовок адреса -->
+            <p class="footer__address__text">
+                <!-- .footer__address__text — текст адреса -->
+                Jahnplatz 4, 82166 Gräfelfing
+                <br />
+                Deutschland
+            </p>
         </div>
-        <div class="site-footer__row">
-            <dt>Telefax:</dt>
-            <dd><a href="tel:+498912509196">+49 89 12 50 91 96</a></dd>
+
+        <!-- * Kontakte -->
+        <div class="footer__contacts">
+            <!-- .footer__contacts — блок с контактами -->
+            <ul class="footer__contact__list">
+                <!-- .footer__contact__list — список контактов -->
+
+                <li class="footer__contact__item">
+                    <!-- .footer__contact__item — элемент списка контактов -->
+                    <span class="footer__contact__span">Telefon:</span>
+                    <!-- .footer__contact__span — подпись к контакту -->
+                    <a class="footer__contact__link" href="tel:+498912509195">
+                        <!-- .footer__contact__link — ссылка для вызова -->
+                        +49 89 12 50 91 95
+                    </a>
+                </li>
+
+                <li class="footer__contact__item">
+                    <span class="footer__contact__span">Telefax:</span>
+                    <a class="footer__contact__link" href="tel:+498912509196">+49 89 12 50 91 96</a>
+                </li>
+
+                <li class="footer__contact__item">
+                    <span class="footer__contact__span">E-Mail:</span>
+                    <a class="footer__contact__link" href="mailto:info@huv-gmbh.de">info@huv-gmbh.de</a>
+                </li>
+            </ul>
         </div>
-        <div class="site-footer__row">
-            <dt>E-mail:</dt>
-            <dd><a href="mailto:info@huv-gmbh.de">info@huv-gmbh.de</a></dd>
-        </div>
-        </dl>
-    </div>
+    </address>
 </footer>
