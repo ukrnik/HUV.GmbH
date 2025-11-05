@@ -3,10 +3,14 @@
 }
 .bannefits__list {
     display: flex;
+    flex-wrap: wrap;
 }
 .bannefits__item {
     height: 260px;
-    width: 480px;
+    /* width: 440px; */
+    /* flex-basis: 440px; */
+    flex-basis: 33%;
+    flex-grow: 1;
 }
 .bannefits__title {
     text-align: center;
@@ -29,4 +33,6 @@
     font-weight: 400;
     font-size: 24px;
     color: var(--color-offwhite);
+    max-width: 450px;
+    margin: 0 auto;
 }

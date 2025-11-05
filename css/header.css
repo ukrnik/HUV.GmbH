@@ -1,17 +1,17 @@
 .header {
-    display: flex;
     align-items: center; /* выравнивает логотип и текст по вертикали */
     justify-content: space-between;
-    margin-top: 10px;
     margin: 0 auto;
 }
-.header__container {
+
+.header__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     margin-top: 10px;
 }
+
 .header__brand {
     display: flex;
     align-items: center; /* выравнивает логотип и текст по вертикали */
@@ -30,21 +30,12 @@
     font-size: 20px;
     color: var(--color-red-dark);
     line-height: 1.2;
-}
-
-.header__nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    /* gap: 400px; */
+    /* flex-basis: 400px; */
 }
 
 .header__menu {
     display: flex;
     gap: 52px;
-    margin-left: 400px;
-    /* margin: 0 auto; */
 }
 
 .header__menu-item {
@@ -55,6 +46,5 @@
     font-weight: 600;
     font-size: 20px;
     color: var(--color-gray-dark);
-
-    display: block;
+    flex-basis: 1;
 }

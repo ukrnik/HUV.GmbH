@@ -4,9 +4,9 @@
     align-items: center; /* выравнивает логотип и текст по вертикали */
 
     background-color: var(--color-red-dark);
-    /* border-radius: 10px; */
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    justify-content: space-between;
 }
 .container {
 }
@@ -16,13 +16,17 @@
 .footer__img {
 }
 .footer__address {
+    gap: 300px;
     display: flex;
+    justify-content: space-between;
+
+    /* flex-wrap: wrap; */
 }
 .footer__address__block {
-    /* font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 400;
     font-size: 24px;
-    color: var(--color-offwhite); */
+    color: var(--color-offwhite);
     margin-left: 90px;
 }
 .footer__address__title {
@@ -44,7 +48,7 @@
     font-weight: 400;
     font-size: 24px;
     color: var(--color-offwhite);
-    margin-left: 300px;
+    /* margin-left: 300px; */
 }
 .footer__contact__list {
 }
