@@ -16,13 +16,16 @@
 .about__title {
     font-family: "Oswald", sans-serif;
     font-weight: 600;
-    font-size: 40px;
+    /* font-size: 40px; */
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
     color: var(--color-offwhite);
 }
 .about__text {
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
-    font-size: 24px;
+    /* font-size: 24px; */
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    max-width: 60ch;
     color: var(--color-offwhite);
     /* height: 315px; */
     max-width: 600px;
@@ -33,9 +36,12 @@
     background-color: var(--color-red-dark);
     border-radius: 10px;
     height: 64px;
-    width: 600px;
+    /* width: 600px; */
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 30px;
+    /* font-size: 30px; */
     color: var(--color-offwhite);
+    width: min(100%, 600px);
+    height: 3.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
