@@ -36,6 +36,7 @@
     color: var(--color-red-dark);
     line-height: 1.2;
     /* flex-basis: 400px; */
+    flex-shrink: 0;
 }
 
 .header__menu {
@@ -44,6 +45,7 @@
 }
 
 .header__menu-item {
+    flex-shrink: 0;
 }
 
 .header__link {

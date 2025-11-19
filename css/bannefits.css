@@ -9,7 +9,8 @@
     height: 260px;
     /* width: 440px; */
     /* flex-basis: 440px; */
-    flex-basis: 33%;
+    flex-basis: 100%;
+    /* flex-basis: 33%; */
     flex-grow: 1;
 }
 .bannefits__title {
@@ -35,4 +36,15 @@
     color: var(--color-offwhite);
     max-width: 450px;
     margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .bannefits__item {
+        flex-basis: 50%;
+    }
+}
+@media (min-width: 1024px) {
+    .bannefits__item {
+        flex-basis: 33.33%;
+    }
 }
