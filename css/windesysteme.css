@@ -1,0 +1,39 @@
+.section {
+}
+.section_windesysteme {
+}
+.container {
+}
+.section_windesysteme__title {
+    font-family: Oswald, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.section_windesysteme__inner {
+}
+.section_windesysteme__figure {
+}
+.section_windesysteme__figure--double {
+}
+.section_windesysteme__images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.section_windesysteme__image {
+    max-width: 650px;
+    width: 100%;
+}
+.section_windesysteme__caption {
+    text-align: center;
+    margin-top: 10px;
+    font-family: Open Sans, sans-serif;
+    font-size: 24px;
+}
+.section_windesysteme__figure--single {
+    margin-top: 40px;
+}
+.section_windesysteme__image--large {
+    width: 100%;
+}

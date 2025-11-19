@@ -2,11 +2,12 @@
     height: 700px;
     margin: 0 auto;
     padding: 62px 0 62px 44px;
+    background-color: var(--color-offwhite);
     background-image: url(../img/Hero\ Photo.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .about__container {
