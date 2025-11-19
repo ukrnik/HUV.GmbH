@@ -1,0 +1,29 @@
+.section_krananlagen {
+    margin: 100px auto;
+}
+.container {
+}
+.section_krananlagen__inner {
+    display: flex;
+    gap: 150px;
+    align-items: center;
+}
+.section_krananlagen__media {
+}
+.section_krananlagen__image {
+    max-width: 445px;
+}
+.section_krananlagen__content {
+    align-items: center;
+}
+.section_krananlagen__title {
+    font-family: Oswald, sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+.section_krananlagen__text {
+    font-family: Open Sans, sans-serif;
+    font-size: 24px;
+    max-width: 680px;
+    margin-top: 40px;
+}
